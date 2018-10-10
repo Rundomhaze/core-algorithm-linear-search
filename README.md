@@ -3,7 +3,7 @@
 # Введение
 
 ```javascript
-array = ['A', 'B', 'A']
+let array = ['A', 'B', 'A']
 # => [A, B, A]
 array.indexOf('A')
 # => 0
@@ -31,7 +31,7 @@ JS извлекает многие функции нижнего уровня п
 ### Релиз 0: Линейный поиск
 
 ```javascript
-numbers = [0, 8, 5, 9, 7, 2]
+let numbers = [0, 8, 5, 9, 7, 2]
 # => [0, 8, 5, 9, 7, 2]
 linearSearch(7, numbers)
 # => 4
@@ -49,7 +49,7 @@ linearSearch(1, numbers)
 
 ### Релиз 1: Глобальный линейный поиск
 ```javascript
-letters = "bananas".split("")
+let letters = "bananas".split("")
 # => ["b", "a", "n", "a", "n", "a", "s"]
 globalLinearSearch("s", letters)
 # => [6]
