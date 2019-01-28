@@ -68,6 +68,4 @@ globalLinearSearch("z", letters)
 
 Линейный поиск - это один из способов поиска коллекции объектов. Давайте рассмотрим производительность нашего алгоритма. Как бы он функционировал, если бы было необходимо просмотреть очень большую коллекцию? Допустим, у нас есть коллекция, содержащая миллион элементов - как бы выполнялся линейный поиск в данном случае?
 
-[implement-enumerable-challenge]: ../../../implement-enumerable-challenge
-[rubydocs Array#index]: http://ruby-doc.org/core-2.1.0/Array.html#method-i-index
 [wikipedia linear search]: http://en.wikipedia.org/wiki/Linear_search
