@@ -1,4 +1,4 @@
-const { linearSearch, globalLinearSearch } = require('../spec');
+const { linearSearch, globalLinearSearch } = require('../linear_search');
 
 describe("linearSearch()", function() {
   it("returns first index of item in array", function() {
