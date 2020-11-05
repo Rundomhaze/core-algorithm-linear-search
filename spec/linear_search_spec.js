@@ -6,10 +6,10 @@ describe("linearSearch()", function() {
   });
 });
 
-describe("globalSearch()", function() {
-  it("returns array indxes of item in array", function() {
-    let item = 4;
-    let arr = [1,1,2,3,4,4,5];
-    expect(globalSearch(item, arr)).toEqual(2);
+describe("globalLinearSearch()", function() {
+  it("returns array indxes of items in array", function() {
+    let item = 'a';
+    let arr = ['b', 'a', 'n', 'a', 'n', 'a', 's'];
+    expect(globalLinearSearch(item, arr)).toEqual([1, 3, 5]);
   });
 });
