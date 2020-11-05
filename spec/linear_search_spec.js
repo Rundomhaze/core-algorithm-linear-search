@@ -1,3 +1,5 @@
+const { linearSearch, globalLinearSearch } = require('../spec');
+
 describe("linearSearch()", function() {
   it("returns first index of item in array", function() {
     let item = 3;
