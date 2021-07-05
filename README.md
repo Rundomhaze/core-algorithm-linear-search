@@ -1,4 +1,4 @@
-## Упражнения на алгоритмы: Линейный поиск
+## Algorithm exercises: Linear search
 
 ```javascript
 let array = ['A', 'B', 'A'];
@@ -10,21 +10,21 @@ array.indexOf('B');
 array.indexOf('C');
 // => -1
 ```
-*Рисунок 1*. Поиск индекса элемента в массиве.
+*Figure 1*. Finding the index of an element in an array.
 
-Тебе необходимо написать метод, который имитирует поведение метода JavaScript `indexOf()`. Этот метод возвращает индекс конкретного элемента в массиве или `-1`, если элемент не найден в массиве. Если элемент найден в массиве более одного раза, то возвращается первый индекс. (см. Рисунок 1)
+You need to write a method that mimics the behavior of the JavaScript `indexOf()` method. This method returns the index of a particular element in the array, or -1 if the element is not found in the array. If the element is found more than once in the array, then the first index is returned. (see Figure 1)
 
-JS избавляет нас от рутинной работы и низкоуровневого программирования, предоставляя методы, такие как `.indexOf()`. Нам не нужно знать, как находится индекс элемента, нам нужно знать только то, что этот индекс означает и как его использовать в наших программах.
+JS helps us with the routine work and low-level programming by providing methods like `indexOf()`. We don't need to know how the index of an element is found, we only need to know what that index means and how to use it in our programs.
 
-Можно отметить, что это очень хорошо, что JS предоставляет эти абстракции. Тем не менее, мы хотим знать, как реализовать некоторые подобные вещи самому. В этой задаче ты реализуешь работу поиска, используя его конкретный алгоритм - линейный поиск.
+It can be noted that it is very nice that JS provides these abstractions. However, we want to know how to implement some of these things ourselves. In this task, you implement the search operation using its specific algorithm - linear search.
 
-## Линейный поиск
+## Linear search
 
-В предыдущих задачах ты рассмотрел(а), что существуют разные способы реализации одной и той же задачи, и что существует множество способов поиска данных в коллекции элементов. Понимание различных алгоритмов и шаблонов для поиска и сортировки наборов данных является неотъемлемой частью компьютерных наук.
+In the previous tasks, you saw that there are different ways to solve the same problem, and that there are many ways to search for data in a collection of items. Understanding the various algorithms and patterns for searching and sorting datasets is an essential part of computer science.
 
-Одним из основных алгоритмов поиска является линейный поиск. Это алгоритм «грубой силы», где мы просто проверяем каждый элемент по одному разу, пока не найдем элемент, который мы ищем; или просмотрим все элементы и не найдем никакого соответствия.
+Linear search is one of the main search algorithms. This is a brute-force algorithm where we just check each element once until we find the element we are looking for; or we will go through all the elements and find no match.
 
-### Релиз 0. Линейный поиск
+### Release 0. Linear search
 
 ```javascript
 let numbers = [0, 8, 5, 9, 7, 2];
@@ -34,25 +34,25 @@ linearSearch(7, numbers);
 linearSearch(1, numbers);
 // => -1
 ```
-*Рисунок 2*. Пример использования линейного поиска.
+*Figure 2*. Example of using linear search.
 
-Напиши функцию `linearSearch`, которая принимает два аргумента: объект и массив. Она должна последовательно перебирать каждый элемент и возвращать индекс, в котором объект был изначально найден. Если объект не найден, то функция возвращает значение `-1`.
+Write a `linearSearch` function that takes two arguments: an element and an array. It should iterate over each element in the array sequentially and return the index at which the element was originally found. If the element is not found, the function returns -1.
 
-**Тестирование**
+**Testing**
 
-Один тест для каждой функции уже написан. Однако тебе нужно больше тестов, чтобы определить, функционирует ли функция согласно твоим ожиданиям. Есть ли какие-либо крайние случаи, которые тебе следует рассмотреть?
+One test for each function has already been written. However, you need more tests to determine if the feature is performing as expected. Are there any edge cases you should consider?
 
-Для установки jest - набери  
+To install jest - use
 `npm install`  
-Для запуска тестов - набирай  
+To start tests - use
 `npm test`  
-в консоле в корне проекта.
+in the console in the project's source folder.
 
-Освежи в памяти [тесты](https://github.com/Elbrus-Bootcamp/manuals/blob/master/jasmine.md)
+Use [tests](https://github.com/Elbrus-Bootcamp/manuals/blob/master/jasmine.md)
 
-**Ограничения**: Тебе нужно написать функцию, не полагаясь на встроенные методы массива `Enumerable (map/reduce/fiter)`. Единственными свойствами, которыми можно пользоваться для работы с массивами - `Array[]` и `Array.length`. Так же для написания линейного поиска можно использовать циклы `for` и` while`.
+**Limitations**: You need to write a function without relying on the built-in methods of the `Enumerable (map/reduce/fiter)`. The only properties you can use to work with arrays are `Array[]` and `Array.length`. You can also use `for` and ` while` loops to write a linear search algorithm.
 
-### Релиз 1. Глобальный линейный поиск
+### Release 1. Global linear search
 
 ```javascript
 let letters = 'bananas'.split('');
@@ -64,14 +64,14 @@ globalLinearSearch('a', letters);
 globalLinearSearch('z', letters);
 // => []
 ```
-*Рисунок 3*. Пример использования глобального линейного поиска.
+*Figure 3*. Example of using global linear search.
 
-В методе `linearSearch` ты возвращаешь индекс первого вхождения элемента. Давай напишем новый метод `globalLinearSearch`, который возвращает массив всех индексов, в которых найден элемент.
+In the `linearSearch` method you return the index of the first occurrence of the element. Let's write a new `globalLinearSearch` method that returns an array of all the indexes at which the element is found.
 
-На Рисунке 3 приведен пример использования этой функции. Для начала создай тесты для проверки корректной работы, а затем напиши функцию, чтобы протестировать её. Что произойдет, если элемент найден только один раз? И что делать, если он не найден?
+Figure 3 shows an example of using this function. First, create tests to check that it works correctly, and then write a function to test it. What happens if an element is found only once? And what if it is not found?
 
-## Выводы
+## Conclusion
 
-Линейный поиск - это один из способов поиска коллекции объектов. Рассмотри производительность своего алгоритма. Как бы он функционировал, если бы было необходимо просмотреть очень большую коллекцию? Допустим, у тебя есть коллекция, содержащая миллион элементов - как бы выполнялся линейный поиск в данном случае?
+Linear search is one way to find a collection of objects. Consider the performance of your algorithm. How would it function if you had to browse a very large collection? Let's say you have a collection containing a million items - how would the linear search work in this case?
 
 [wikipedia linear search]: http://en.wikipedia.org/wiki/Linear_search
